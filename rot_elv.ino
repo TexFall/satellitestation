@@ -3,14 +3,17 @@ unsigned long last_time; //число в диапазоне от нуля до 9
 const int  stepsPerRevolution = 200;// константа, число шагов на один оборот движка
 AF_Stepper elevation(stepsPerRevolution, 2); //создаем обьект движка элевации
 AF_Stepper rotation(stepsPerRevolution, 1); //создаем объект движка азимута
+
 //400 шагов равняется приблизительно 90 градусов, 1 шаг приблизительно равен 0.225 градусов
-//аналоговые входов 5 штук, нумеруются от 14 до 19.
+
+//аналоговых входов 5 штук, нумеруются от 14 до 19.
 const int buttonPin0 = 14;
 const int buttonPin1 = 15;
 const int buttonPin2 = 16;
 const int buttonPin3 = 17;
 const int concevicPin4 = 18;
 const int concevicPin5 = 19;
+
 void setup() {
   pinMode(buttonPin0, INPUT);
   pinMode(buttonPin1, INPUT);
@@ -25,6 +28,7 @@ void setup() {
   while(analogRead(concevicPin4)<300) rotation.step(2,BACKWARD,SINGLE);// Выставляем ноль для азимута
 
 }
+
 void loop() {
   if(analogRead(buttonPin0)>300 && analogRead(concevicPin5)<300){
     last_time=millis();

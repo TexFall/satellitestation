@@ -4,7 +4,7 @@ const int  stepsPerRevolution = 200;// константа, число шагов
 AF_Stepper elevation(stepsPerRevolution, 2); //создаем обьект движка элевации
 AF_Stepper rotation(stepsPerRevolution, 1); //создаем объект движка азимута
 //400 шагов равняется приблизительно 90 градусов, 1 шаг приблизительно равен 0.225 градусов
-//аналоговые входов 5 штук, нумеруются от 14 до 19
+//аналоговые входов 5 штук, нумеруются от 14 до 19.
 const int buttonPin0 = 14;
 const int buttonPin1 = 15;
 const int buttonPin2 = 16;
